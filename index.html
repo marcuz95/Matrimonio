@@ -101,6 +101,12 @@ z-index:10;
 margin-top:30px;
 letter-spacing:2px;
 font-size:15px;
+color:white;
+
+position:relative;
+display:inline-block;
+
+animation:textGlow 3s infinite;
 }
 
 .envelope.open .wax-seal{
@@ -268,6 +274,23 @@ rgba(0,0,0,.15);
   
 }
 
+@keyframes textGlow{
+
+0%{
+text-shadow:0 0 5px rgba(255,255,255,.3);
+}
+
+50%{
+text-shadow:
+0 0 12px rgba(255,255,255,.9),
+0 0 20px rgba(255,255,255,.6);
+}
+
+100%{
+text-shadow:0 0 5px rgba(255,255,255,.3);
+}
+
+}
 </style>
 
 </head>
