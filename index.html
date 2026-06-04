@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marco & Stefania</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia,serif;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.card{
+max-width:700px;
+}
+
+.small{
+letter-spacing:4px;
+font-size:14px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:58px;
+font-weight:normal;
+margin-bottom:20px;
+}
+
+.date{
+font-size:24px;
+margin-bottom:35px;
+}
+
+.btn{
+background:#e28d73;
+color:white;
+border:none;
+padding:18px 35px;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+}
+
+.section{
+padding:80px 25px;
+text-align:center;
+background:#fffaf5;
+}
+
+.section h2{
+color:#d97f62;
+margin-bottom:20px;
+font-size:36px;
+}
+
+.section p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+}
+
+.map{
+display:inline-block;
+margin-top:30px;
+background:#d97f62;
+padding:15px 25px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+}
+
+</style>
 </head>
-<body style="text-align:center;padding:50px;font-family:Arial;">
-<h1>💍 Marco & Stefania</h1>
-<p>27 Agosto 2027</p>
-<p>Parco sul Mare</p>
+
+<body>
+
+<section class="hero">
+
+<div class="card">
+
+<div class="small">
+IL NOSTRO MATRIMONIO
+</div>
+
+<h1>Marco & Stefania</h1>
+
+<div class="date">
+27 Agosto 2027
+</div>
+
+<button class="btn" onclick="apriInvito()">
+💌 Apri l'Invito
+</button>
+
+</div>
+
+</section>
+
+<div id="invito" class="hidden">
+
+<section class="section">
+
+<h2>Benvenuti</h2>
+
+<p>
+Con immensa gioia vi invitiamo a condividere
+con noi uno dei giorni più importanti della nostra vita.
+Saremo felici di festeggiare insieme a voi
+in una splendida giornata affacciata sul mare.
+</p>
+
+<a class="map"
+href="https://maps.app.goo.gl/bB56vDsLGmP1xyVU6?g_st=ic"
+target="_blank">
+
+📍 Parco sul Mare
+
+</a>
+
+</section>
+
+</div>
+
+<script>
+
+function apriInvito(){
+document.getElementById("invito").classList.remove("hidden");
+document.getElementById("invito").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
+
 </body>
 </html>
