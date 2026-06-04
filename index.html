@@ -485,64 +485,47 @@ opacity:0;
 transform:translateX(-50%) scale(1.8);
 }
 
-.envelope.open .letter-preview{
-transform:translateY(-120px);
-}
-
-@keyframes floatEnvelope{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-12px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="envelope-container" onclick="apriInvito()">
+<div class="invite-container" onclick="apriInvito()">
 
 <div class="envelope">
+
+<div class="envelope-back"></div>
+
+<div class="envelope-flap"></div>
+
+<div class="invitation">
+
+<h2>Stefania & Marco</h2>
+
+<p>27 Agosto 2027</p>
 
 <div class="wax-seal">
 S&M
 </div>
 
+</div>
+
+</div>
+
+<p class="open-text">
+Tocca il sigillo per aprire l'invito
+</p>
+
+</div>
+
+<div class="envelope-back"></div>
+
 <div class="envelope-flap"></div>
 
-<div class="letter-preview">
+<div class="invitation">
 
 <h2>Stefania & Marco</h2>
 
 <p>27 Agosto 2027</p>
+
+<div class="wax-seal">
+S&M
+</div>
 
 </div>
 
