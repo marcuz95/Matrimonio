@@ -278,7 +278,7 @@ rgba(0,0,0,.15);
 
 <div class="hero-content">
 
-<<div class="invite-container" onclick="apriInvito()">
+<div class="invite-container" onclick="apriInvito()">
 
 <img
 src="4768B8D8-CABF-4D60-8827-DEABD54949ED.jpeg"
@@ -506,11 +506,16 @@ Grazie per far parte della nostra storia.
 
 function apriInvito(){
 
-const envelope =
-document.querySelector('.envelope');
+const busta =
+document.querySelector('.wedding-envelope');
 
-envelope.classList.add('open');
-document.querySelector('.wax-seal').style.opacity="0";
+busta.style.transform = "scale(0.95)";
+busta.style.opacity = "0";
+
+setTimeout(function(){
+
+const hero =
+document.querySelector('.hero');
 
 setTimeout(function(){
 
