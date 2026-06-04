@@ -378,6 +378,127 @@ transform:translateY(0);
 
 }
 
+.envelope-container{
+cursor:pointer;
+}
+
+.envelope{
+position:relative;
+width:280px;
+height:190px;
+margin:auto;
+background:#f6ede6;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+animation:floatEnvelope 4s ease-in-out infinite;
+}
+
+.envelope-flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ead8ca;
+
+clip-path:polygon(0 0,100% 0,50% 60%);
+
+transform-origin:top;
+transition:1.2s;
+z-index:3;
+}
+
+.wax-seal{
+position:absolute;
+left:50%;
+top:72px;
+
+transform:translateX(-50%);
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+background:#b63a3a;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:22px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+z-index:4;
+transition:1s;
+}
+
+.letter-preview{
+position:absolute;
+width:86%;
+height:86%;
+
+left:7%;
+top:12%;
+
+background:white;
+
+border-radius:8px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:#444;
+
+z-index:1;
+
+transition:1.2s;
+}
+
+.letter-preview h2{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.open-text{
+margin-top:25px;
+letter-spacing:2px;
+font-size:15px;
+}
+
+.envelope.open .envelope-flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .wax-seal{
+opacity:0;
+transform:translateX(-50%) scale(1.8);
+}
+
+.envelope.open .letter-preview{
+transform:translateY(-120px);
+}
+
+@keyframes floatEnvelope{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
 @keyframes fadeUp{
 
 from{
@@ -402,25 +523,31 @@ transform:translateY(0);
 
 <div class="hero-content">
 
-<div class="small">
+<div class="envelope-container" onclick="apriInvito()">
 
-SAVE THE DATE
+<div class="envelope">
+
+<div class="wax-seal">
+❤️
+</div>
+
+<div class="envelope-flap"></div>
+
+<div class="letter-preview">
+
+<h2>Stefania & Marco</h2>
+
+<p>27 Agosto 2027</p>
 
 </div>
 
-<h1>
-
-Stefania & Marco
-
-</h1>
-
-<div class="date">
-
-27 Agosto 2027
-
 </div>
 
-<div class="quote">
+<p class="open-text">
+Tocca il sigillo per aprire l'invito
+</p>
+
+</div>
 
 "Il mare unisce terre lontane.<br>
 
@@ -696,7 +823,7 @@ contenuto.scrollIntoView({
 behavior:"smooth"
 });
 
-},1200);
+},1800);
 
 }
 
