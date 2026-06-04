@@ -99,16 +99,25 @@ z-index:10;
 
 .open-text{
 margin-top:30px;
-letter-spacing:2px;
 font-size:15px;
-color:white;
+letter-spacing:2px;
 
-position:relative;
-display:inline-block;
+color:rgba(255,255,255,.75);
 
-animation:textGlow 3s infinite;
+background:linear-gradient(
+90deg,
+rgba(255,255,255,.4) 0%,
+rgba(255,255,255,1) 50%,
+rgba(255,255,255,.4) 100%
+);
+
+background-size:200% auto;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:shimmerText 4s infinite;
 }
-
 .envelope.open .wax-seal{
 animation:sealDrop .8s forwards;
 }
@@ -272,20 +281,29 @@ box-shadow:
 rgba(0,0,0,.15);
 }
 
-@keyframes textGlow{
+@keyframes shimmerText{
 
 0%{
-text-shadow:0 0 5px rgba(255,255,255,.3);
+background-position:-200% center;
+transform:scale(1);
+}
+
+45%{
+transform:scale(1);
 }
 
 50%{
-text-shadow:
-0 0 12px rgba(255,255,255,.9),
-0 0 20px rgba(255,255,255,.6);
+background-position:0% center;
+transform:scale(1.08);
+}
+
+55%{
+transform:scale(1);
 }
 
 100%{
-text-shadow:0 0 5px rgba(255,255,255,.3);
+background-position:200% center;
+transform:scale(1);
 }
 
 }
