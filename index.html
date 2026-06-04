@@ -342,6 +342,29 @@ transform:translateY(-220px);
 
 }
 
+.invite-icon{
+font-size:60px;
+}
+
+.invite-label{
+margin-top:10px;
+font-size:18px;
+letter-spacing:4px;
+}
+
+.real-invitation{
+display:none;
+}
+
+.envelope.open .invite-icon,
+.envelope.open .invite-label{
+display:none;
+}
+
+.envelope.open .real-invitation{
+display:block;
+}
+
 @keyframes fadeUp{
 
 from{
@@ -377,16 +400,27 @@ onclick="apriInvito()">
 
 <div class="invitation">
 
+<div class="invite-icon">
+💍
+</div>
+
+<div class="invite-label">
+INVITO
+</div>
+
+<div class="real-invitation">
+
 <h2>Stefania & Marco</h2>
 
 <p>27 Agosto 2027</p>
+
+</div>
 
 <div class="wax-seal">
 S&M
 </div>
 
 </div>
-
 </div>
 
 <p class="open-text">
