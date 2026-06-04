@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stefania ❤️ Marco</title>
+<title>Stefania & Marco</title>
 
 <style>
 
@@ -25,9 +27,16 @@ color:#444;
 overflow-x:hidden;
 }
 
+.hidden{
+display:none;
+}
+
 .hero{
-position:relative;
 height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 
 background:
 linear-gradient(
@@ -35,92 +44,145 @@ rgba(0,0,0,.45),
 rgba(0,0,0,.35)
 ),
 
-url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80');
+url('IMG_9983.jpeg');
 
 background-size:cover;
 background-position:center;
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
 padding:20px;
-
 color:white;
 }
 
 .hero-content{
 max-width:800px;
-animation:fadeUp 1.8s ease;
+animation:fadeUp 1.5s ease;
 }
 
-.small{
-letter-spacing:6px;
-font-size:14px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:52px;
-font-weight:normal;
-margin-bottom:15px;
-}
-
-.date{
-font-size:24px;
-margin-bottom:20px;
-}
-
-.quote{
-font-style:italic;
-font-size:20px;
-line-height:1.8;
-margin-bottom:35px;
-}
-
-.btn{
-background:#e28d73;
-color:white;
-border:none;
-padding:18px 36px;
-border-radius:50px;
-font-size:18px;
+.invite-container{
 cursor:pointer;
-
-transition:.4s;
 }
 
-.btn:hover{
+.envelope{
+position:relative;
+width:320px;
+height:230px;
+margin:auto;
+}
 
-transform:translateY(-4px);
+.envelope-back{
+position:absolute;
+width:100%;
+height:100%;
+background:#eadccf;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.envelope-flap{
+position:absolute;
+width:100%;
+height:100%;
+background:#ddc8b7;
+
+clip-path:polygon(
+0 0,
+100% 0,
+50% 58%
+);
+
+transform-origin:top;
+
+transition:1.2s;
+
+z-index:5;
+}
+
+.invitation{
+position:absolute;
+
+left:10%;
+top:12%;
+
+width:80%;
+height:85%;
+
+background:white;
+
+border-radius:10px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:#444;
 
 box-shadow:
 0 10px 25px
-rgba(226,141,115,.4);
+rgba(0,0,0,.15);
 
+transition:1.5s;
+
+z-index:2;
 }
 
-.wave{
+.invitation h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.invitation p{
+font-size:20px;
+}
+
+.wax-seal{
 position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:120px;
-background:
-linear-gradient(
-to top,
-#fffaf5,
-transparent
-);
+
+bottom:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+background:#8b1e2d;
+border:4px solid #a32637;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:bold;
+font-size:20px;
+
+color:#f8e9e9;
+
+box-shadow:
+0 8px 20px
+rgba(0,0,0,.25);
+
+z-index:10;
 }
 
-.hidden{
-display:none;
+.open-text{
+margin-top:30px;
+letter-spacing:2px;
+font-size:15px;
+}
+
+.envelope.open .envelope-flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .invitation{
+transform:translateY(-180px);
 }
 
 .section{
-padding:35px 25px;
+padding:40px 25px;
 text-align:center;
 
 opacity:0;
@@ -144,79 +206,50 @@ margin:auto;
 padding:25px;
 
 border-radius:20px;
+
 box-shadow:
 0 8px 25px
 rgba(0,0,0,.08);
-
-transition:.4s;
-}
-
-.card:hover{
-
-transform:translateY(-6px);
-
-box-shadow:
-0 15px 35px
-rgba(0,0,0,.12);
-
-}
-
-.section h2{
-
-font-size:36px;
-
-color:#d97f62;
-
-margin-bottom:25px;
-
-}
-
-.section p{
-
-font-size:18px;
-
-line-height:1.8;
-
 }
 
 .countdown{
-
 display:flex;
-
 justify-content:center;
-
 gap:15px;
-
 flex-wrap:wrap;
-
-margin-top:35px;
-
+margin-top:30px;
 }
 
 .box{
-
 background:#fffaf5;
-
-padding:12px;
-
+padding:15px;
 border-radius:16px;
-
-min-width:100px;
-
+min-width:90px;
 }
 
 .number{
-
 font-size:28px;
-
 font-weight:bold;
-
 color:#d97f62;
+}
 
+.section h2{
+font-size:36px;
+color:#d97f62;
+margin-bottom:25px;
+}
+
+.section p{
+font-size:18px;
+line-height:1.8;
+}
+
+.timeline{
+font-size:20px;
+line-height:2.2;
 }
 
 .map-btn{
-
 display:inline-block;
 
 margin-top:25px;
@@ -224,7 +257,6 @@ margin-top:25px;
 padding:15px 30px;
 
 background:#d97f62;
-
 color:white;
 
 text-decoration:none;
@@ -232,260 +264,78 @@ text-decoration:none;
 border-radius:50px;
 
 transition:.3s;
-
 }
 
 .map-btn:hover{
-
 transform:translateY(-3px);
-
-}
-
-.timeline{
-
-font-size:20px;
-
-line-height:2.4;
-
 }
 
 footer{
-
 background:#fff1e8;
-
 padding:70px 20px;
-
 text-align:center;
-
 }
 
 footer h2{
-
 color:#d97f62;
-
 margin-bottom:15px;
-
 }
 
-.envelope-container{
-margin-top:30px;
-cursor:pointer;
-}
-
-.envelope{
-position:relative;
-width:220px;
-height:140px;
-margin:auto;
-background:#f3e7dd;
-border-radius:8px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-animation:floatEnvelope 3s ease-in-out infinite;
-}
-
-.envelope:before{
-content:'';
+.wave{
 position:absolute;
 bottom:0;
 left:0;
 width:100%;
-height:100%;
+height:120px;
+
 background:
 linear-gradient(
-135deg,
-transparent 50%,
-#e8d7ca 50%
+to top,
+#fffaf5,
+transparent
 );
 }
 
-.envelope:after{
-content:'';
-position:absolute;
-bottom:0;
-right:0;
+img.location-photo,
+img.story-photo{
 width:100%;
-height:100%;
-background:
-linear-gradient(
-225deg,
-transparent 50%,
-#e8d7ca 50%
-);
+max-width:700px;
+display:block;
+margin:25px auto;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 30px
+rgba(0,0,0,.15);
 }
 
-.envelope-flap{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#eddccf;
-clip-path:polygon(0 0,100% 0,50% 55%);
-transform-origin:top;
-transition:1s;
-z-index:3;
-}
+@keyframes fadeUp{
 
-.letter{
-position:absolute;
-width:80%;
-height:90%;
-background:white;
-left:10%;
-top:25%;
-border-radius:8px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:42px;
-
-transition:1s;
-
-z-index:2;
-}
-
-.open-text{
-margin-top:18px;
-font-size:16px;
-letter-spacing:2px;
-}
-
-.envelope.open .envelope-flap{
-transform:rotateX(180deg);
-}
-
-.envelope.open .letter{
-transform:translateY(-80px);
-}
-
-@keyframes floatEnvelope{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-.envelope-container{
-cursor:pointer;
-}
-
-.envelope{
-position:relative;
-width:280px;
-height:190px;
-margin:auto;
-background:#f6ede6;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 20px 40px rgba(0,0,0,.25);
-
-animation:floatEnvelope 4s ease-in-out infinite;
-}
-
-.envelope-flap{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#ead8ca;
-
-clip-path:polygon(0 0,100% 0,50% 60%);
-
-transform-origin:top;
-transition:1.2s;
-z-index:3;
-}
-
-.wax-seal{
-position:absolute;
-left:50%;
-top:72px;
-
-transform:translateX(-50%);
-
-width:60px;
-height:60px;
-
-border-radius:50%;
-
-background:#8b1e2d;
-border:4px solid #a32637;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:18px;
-font-weight:bold;
-color:#f8e9e9;
-
-text-shadow:0 1px 2px rgba(0,0,0,.3);
-
-box-shadow:0 5px 15px rgba(0,0,0,.25);
-
-z-index:4;
-transition:1s;
-}
-
-.letter-preview{
-position:absolute;
-width:86%;
-height:86%;
-
-left:7%;
-top:12%;
-
-background:white;
-
-border-radius:8px;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-color:#444;
-
-z-index:1;
-
-transition:1.2s;
-}
-
-.letter-preview h2{
-font-size:26px;
-margin-bottom:10px;
-}
-
-.open-text{
-margin-top:25px;
-letter-spacing:2px;
-font-size:15px;
-}
-
-.envelope.open .envelope-flap{
-transform:rotateX(180deg);
-}
-
-.envelope.open .wax-seal{
+from{
 opacity:0;
-transform:translateX(-50%) scale(1.8);
+transform:translateY(40px);
 }
 
-<div class="invite-container" onclick="apriInvito()">
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="invite-container"
+onclick="apriInvito()">
 
 <div class="envelope">
 
@@ -513,37 +363,14 @@ Tocca il sigillo per aprire l'invito
 
 </div>
 
-<div class="envelope-back"></div>
-
-<div class="envelope-flap"></div>
-
-<div class="invitation">
-
-<h2>Stefania & Marco</h2>
-
-<p>27 Agosto 2027</p>
-
-<div class="wax-seal">
-S&M
-</div>
-
-</div>
-
-</div>
-
-<p class="open-text">
-Tocca il sigillo per aprire l'invito
-</p>
-
 </div>
 
 <div class="wave"></div>
 
 </section>
 
-<div id="contenuto"
+<div id="contenuto" class="hidden">
 
-class="hidden">
 <section class="section">
 
 <div class="card">
@@ -551,10 +378,10 @@ class="hidden">
 <h2>💍 Il Nostro Giorno Speciale</h2>
 
 <p>
+
 Con immensa gioia vi invitiamo a condividere con noi
 uno dei giorni più importanti della nostra vita.
-Saremo felici di festeggiare insieme a voi
-in una splendida giornata affacciata sul mare.
+
 </p>
 
 <div class="countdown">
@@ -592,22 +419,19 @@ Secondi
 <h2>📍 Location</h2>
 
 <p>
+
 <strong>Parco sul Mare</strong>
+
 <br>
+
 Cupra Marittima (AP)
+
 </p>
 
 <img
 src="IMG_9983.jpeg"
 alt="Parco sul Mare"
-style="
-width:100%;
-max-width:700px;
-display:block;
-margin:25px auto;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-">
+class="location-photo">
 
 <p>
 
@@ -615,7 +439,8 @@ box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 </p>
 
-<a class="map-btn"
+<a
+class="map-btn"
 href="https://maps.app.goo.gl/RGMYA7x1VWKph5yn6?g_st=ic"
 target="_blank">
 
@@ -626,7 +451,7 @@ Apri Google Maps
 </div>
 
 </section>
-  
+
 <section class="section">
 
 <div class="card">
@@ -660,19 +485,14 @@ Apri Google Maps
 <img
 src="IMG_3647.jpeg"
 alt="Stefania e Marco"
-style="
-width:100%;
-max-width:650px;
-display:block;
-margin:30px auto;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-">
+class="story-photo">
 
 <p>
 
-Ci siamo incontrati, ci siamo scelti
-e da quel momento abbiamo iniziato
+Ci siamo incontrati,
+ci siamo scelti
+e da quel momento
+abbiamo iniziato
 a costruire il nostro futuro insieme.
 
 <br><br>
@@ -685,7 +505,6 @@ il giorno più importante della nostra storia.
 </div>
 
 </section>
-
 
 <section class="section">
 
@@ -702,7 +521,8 @@ la vostra presenza entro il 30 Giugno 2027.
 
 <br>
 
-<a class="map-btn"
+<a
+class="map-btn"
 href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor"
 target="_blank">
 
@@ -751,7 +571,7 @@ Grazie per far parte della nostra storia.
 </p>
 
 </footer>
-  
+
 </div>
 
 <script>
@@ -765,23 +585,27 @@ envelope.classList.add('open');
 
 setTimeout(function(){
 
+const hero =
+document.querySelector('.hero');
+
+hero.style.transition = "1s";
+hero.style.opacity = "0";
+
+setTimeout(function(){
+
+hero.style.display = "none";
+
 const contenuto =
 document.getElementById("contenuto");
 
 contenuto.classList.remove("hidden");
 
-contenuto.style.opacity="0";
-
-setTimeout(function(){
-
-contenuto.style.transition="1s";
-contenuto.style.opacity="1";
-
-},100);
-
-contenuto.scrollIntoView({
+window.scrollTo({
+top:0,
 behavior:"smooth"
 });
+
+},1000);
 
 },1800);
 
@@ -798,19 +622,34 @@ new Date().getTime();
 const diff =
 matrimonio - now;
 
+if(diff <= 0) return;
+
 document.getElementById("giorni").innerHTML =
 Math.floor(diff/(1000*60*60*24));
 
 document.getElementById("ore").innerHTML =
-Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+Math.floor(
+(diff%(1000*60*60*24))
+/
+(1000*60*60)
+);
 
 document.getElementById("minuti").innerHTML =
-Math.floor((diff%(1000*60*60))/(1000*60));
+Math.floor(
+(diff%(1000*60*60))
+/
+(1000*60)
+);
 
 document.getElementById("secondi").innerHTML =
-Math.floor((diff%(1000*60))/1000);
+Math.floor(
+(diff%(1000*60))
+/
+1000
+);
 
 },1000);
+
 const sections =
 document.querySelectorAll('.section');
 
@@ -827,6 +666,8 @@ entry.target.classList.add('show');
 
 });
 
+},{
+threshold:0.15
 });
 
 sections.forEach(section=>{
@@ -834,7 +675,9 @@ sections.forEach(section=>{
 observer.observe(section);
 
 });
+
 </script>
 
 </body>
+
 </html>
