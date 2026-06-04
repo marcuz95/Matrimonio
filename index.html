@@ -2,21 +2,28 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stefania ❤️ Marco</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stefania ❤️ Marco - 27 Agosto 2027</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Georgia,serif;
 background:#fffaf5;
 color:#444;
+overflow-x:hidden;
 }
 
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.40)),
 url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
@@ -24,21 +31,44 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-color:white;
 padding:20px;
+color:white;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.small{
+letter-spacing:5px;
+font-size:14px;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:55px;
-margin:10px 0;
+font-size:60px;
+font-weight:normal;
+margin-bottom:15px;
+}
+
+.date{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.quote{
+font-style:italic;
+font-size:20px;
+line-height:1.6;
+margin-bottom:35px;
 }
 
 .btn{
 background:#e28d73;
-border:none;
-padding:16px 30px;
-border-radius:40px;
 color:white;
+border:none;
+padding:18px 35px;
+border-radius:50px;
 font-size:18px;
 cursor:pointer;
 }
@@ -47,80 +77,102 @@ cursor:pointer;
 display:none;
 }
 
-section{
-padding:70px 25px;
+.section{
+padding:80px 25px;
 text-align:center;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:15px;
-max-width:800px;
+padding:30px;
+border-radius:18px;
+max-width:850px;
 margin:auto;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-h2{
+.section h2{
 color:#d97f62;
+margin-bottom:20px;
+font-size:34px;
+}
+
+.section p{
+line-height:1.8;
+font-size:18px;
 }
 
 .countdown{
 display:flex;
 justify-content:center;
-gap:10px;
+gap:15px;
 flex-wrap:wrap;
-margin-top:25px;
+margin-top:30px;
 }
 
 .box{
 background:#fffaf5;
-padding:15px;
-border-radius:12px;
-min-width:80px;
+padding:20px;
+border-radius:15px;
+min-width:90px;
 }
 
 .number{
-font-size:28px;
+font-size:32px;
 font-weight:bold;
 color:#d97f62;
 }
 
-.map{
+.map-btn{
 display:inline-block;
-margin-top:20px;
+margin-top:25px;
 background:#d97f62;
-padding:14px 24px;
-border-radius:30px;
+padding:15px 25px;
+border-radius:50px;
 color:white;
 text-decoration:none;
 }
 
+.timeline{
+line-height:2.4;
+font-size:20px;
+margin-top:20px;
+}
+
 footer{
 background:#fff1e8;
-padding:50px;
+padding:60px 20px;
 text-align:center;
 }
-</style>
 
+footer h2{
+color:#d97f62;
+margin-bottom:15px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<div>
+<div class="hero-content">
 
-<div>SAVE THE DATE</div>
+<div class="small">
+SAVE THE DATE
+</div>
 
 <h1>Stefania ❤️ Marco</h1>
 
-<p>27 Agosto 2027</p>
+<div class="date">
+27 Agosto 2027
+</div>
 
-<p><em>
-Ogni storia d'amore è bella,
-ma la nostra è la nostra preferita.
-</em></p>
+<div class="quote">
+"Ogni storia d'amore è bella,<br>
+ma la nostra è la nostra preferita."
+</div>
 
 <button class="btn" onclick="apriInvito()">
 💌 Apri l'Invito
@@ -128,40 +180,42 @@ ma la nostra è la nostra preferita.
 
 </div>
 
-</div>
+</section>
 
 <div id="contenuto" class="hidden">
 
-<section>
+<section class="section">
 
 <div class="card">
 
 <h2>💍 Il Nostro Giorno Speciale</h2>
 
 <p>
-Con immensa gioia vi invitiamo a condividere
-con noi uno dei giorni più importanti della nostra vita.
+Con immensa gioia vi invitiamo a condividere con noi
+uno dei giorni più importanti della nostra vita.
+Saremo felici di festeggiare insieme a voi
+in una splendida giornata affacciata sul mare.
 </p>
 
 <div class="countdown">
 
 <div class="box">
-<div id="g" class="number">0</div>
+<div id="giorni" class="number">0</div>
 Giorni
 </div>
 
 <div class="box">
-<div id="h" class="number">0</div>
+<div id="ore" class="number">0</div>
 Ore
 </div>
 
 <div class="box">
-<div id="m" class="number">0</div>
+<div id="minuti" class="number">0</div>
 Minuti
 </div>
 
 <div class="box">
-<div id="s" class="number">0</div>
+<div id="secondi" class="number">0</div>
 Secondi
 </div>
 
@@ -171,7 +225,7 @@ Secondi
 
 </section>
 
-<section>
+<section class="section">
 
 <div class="card">
 
@@ -179,7 +233,7 @@ Secondi
 
 <p><strong>Parco sul Mare</strong></p>
 
-<a class="map"
+<a class="map-btn"
 href="https://maps.app.goo.gl/bB56vDsLGmP1xyVU6?g_st=ic"
 target="_blank">
 
@@ -191,30 +245,47 @@ Apri Google Maps
 
 </section>
 
-<section>
+<section class="section">
 
 <div class="card">
 
 <h2>🌊 Programma della Giornata</h2>
 
-<p>
-💒 Cerimonia<br><br>
-🥂 Aperitivo<br><br>
-🍽️ Cena<br><br>
-🎂 Taglio della torta<br><br>
+<div class="timeline">
+
+💒 Cerimonia<br>
+
+🥂 Aperitivo<br>
+
+🍽️ Cena<br>
+
+🎂 Taglio della torta<br>
+
 🎉 Festa
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>❤️ La Nostra Storia</h2>
+
+<p>
+Qui inseriremo la vostra storia,
+i momenti più belli insieme
+e le fotografie della vostra avventura.
 </p>
 
 </div>
 
 </section>
 
-<section>
-
-<div class="card">
-
-<h2>❤️ La Nostra Storia</h2>
-  <section>
+<section class="section">
 
 <div class="card">
 
@@ -225,9 +296,7 @@ Per aiutarci ad organizzare al meglio il nostro giorno speciale,
 ti chiediamo gentilmente di confermare la tua presenza.
 </p>
 
-<br>
-
-<a class="map"
+<a class="map-btn"
 href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor"
 target="_blank">
 
@@ -239,23 +308,12 @@ Conferma la tua presenza ❤️
 
 </section>
 
-<p>
-Qui inseriremo la vostra storia,
-la proposta di matrimonio
-e le vostre fotografie.
-</p>
-
-</div>
-
-</section>
-
 <footer>
 
 <h2>Stefania ❤️ Marco</h2>
 
 <p>
-Non vediamo l'ora di condividere
-questo giorno con voi.
+Non vediamo l'ora di condividere questo giorno con voi.
 </p>
 
 </footer>
@@ -265,10 +323,13 @@ questo giorno con voi.
 <script>
 
 function apriInvito(){
+
 document.getElementById("contenuto").classList.remove("hidden");
+
 document.getElementById("contenuto").scrollIntoView({
 behavior:"smooth"
 });
+
 }
 
 const matrimonio =
@@ -277,18 +338,19 @@ new Date("2027-08-27T16:00:00").getTime();
 setInterval(function(){
 
 const now = new Date().getTime();
+
 const diff = matrimonio - now;
 
-document.getElementById("g").innerHTML =
+document.getElementById("giorni").innerHTML =
 Math.floor(diff/(1000*60*60*24));
 
-document.getElementById("h").innerHTML =
+document.getElementById("ore").innerHTML =
 Math.floor((diff%(1000*60*60*24))/(1000*60*60));
 
-document.getElementById("m").innerHTML =
+document.getElementById("minuti").innerHTML =
 Math.floor((diff%(1000*60*60))/(1000*60));
 
-document.getElementById("s").innerHTML =
+document.getElementById("secondi").innerHTML =
 Math.floor((diff%(1000*60))/1000);
 
 },1000);
