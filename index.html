@@ -122,6 +122,16 @@ display:none;
 .section{
 padding:90px 25px;
 text-align:center;
+
+opacity:0;
+transform:translateY(40px);
+
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card{
@@ -530,7 +540,29 @@ document.getElementById("secondi").innerHTML =
 Math.floor((diff%(1000*60))/1000);
 
 },1000);
+const sections =
+document.querySelectorAll('.section');
 
+const observer =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+});
+
+sections.forEach(section=>{
+
+observer.observe(section);
+
+});
 </script>
 
 </body>
