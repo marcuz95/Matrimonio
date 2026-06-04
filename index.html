@@ -269,6 +269,117 @@ margin-bottom:15px;
 
 @keyframes fadeUp{
 
+.envelope-container{
+margin-top:30px;
+cursor:pointer;
+}
+
+.envelope{
+position:relative;
+width:220px;
+height:140px;
+margin:auto;
+background:#f3e7dd;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+animation:floatEnvelope 3s ease-in-out infinite;
+}
+
+.envelope:before{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+135deg,
+transparent 50%,
+#e8d7ca 50%
+);
+}
+
+.envelope:after{
+content:'';
+position:absolute;
+bottom:0;
+right:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+225deg,
+transparent 50%,
+#e8d7ca 50%
+);
+}
+
+.envelope-flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#eddccf;
+clip-path:polygon(0 0,100% 0,50% 55%);
+transform-origin:top;
+transition:1s;
+z-index:3;
+}
+
+.letter{
+position:absolute;
+width:80%;
+height:90%;
+background:white;
+left:10%;
+top:25%;
+border-radius:8px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:42px;
+
+transition:1s;
+
+z-index:2;
+}
+
+.open-text{
+margin-top:18px;
+font-size:16px;
+letter-spacing:2px;
+}
+
+.envelope.open .envelope-flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+transform:translateY(-80px);
+}
+
+@keyframes floatEnvelope{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
 from{
 
 opacity:0;
@@ -325,13 +436,23 @@ Il 27 Agosto 2027 inizierà il nostro viaggio più bello."
 
 </div>
 
-<button class="btn"
+<div class="envelope-container" onclick="apriInvito()">
 
-onclick="apriInvito()">
+<div class="envelope">
 
-💌 Apri l'Invito
+<div class="envelope-flap"></div>
 
-</button>
+<div class="letter">
+💍
+</div>
+
+</div>
+
+<p class="open-text">
+Tocca la busta per aprire l'invito
+</p>
+
+</div>
 
 </div>
 
@@ -556,6 +677,13 @@ Grazie per far parte della nostra storia.
 
 function apriInvito(){
 
+const envelope =
+document.querySelector('.envelope');
+
+envelope.classList.add('open');
+
+setTimeout(function(){
+
 const contenuto =
 document.getElementById("contenuto");
 
@@ -566,7 +694,6 @@ contenuto.style.opacity="0";
 setTimeout(function(){
 
 contenuto.style.transition="1s";
-
 contenuto.style.opacity="1";
 
 },100);
@@ -574,6 +701,8 @@ contenuto.style.opacity="1";
 contenuto.scrollIntoView({
 behavior:"smooth"
 });
+
+},1200);
 
 }
 
