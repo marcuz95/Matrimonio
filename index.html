@@ -64,31 +64,49 @@ cursor:pointer;
 
 .envelope{
 position:relative;
-width:360px;
+
+width:340px;
 height:220px;
+
 margin:auto;
+
+animation:floatEnvelope 4s ease-in-out infinite;
 }
 
 .envelope-back{
 position:absolute;
+
 width:100%;
 height:100%;
-background:#eadccf;
+
+background:#e9dfd3;
+
 border-radius:12px;
-box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.25);
 }
 
 .envelope-flap{
 position:absolute;
+
 width:100%;
 height:100%;
-background:#ddc8b7;
+
+background:#dcc8b9;
 
 clip-path:polygon(
 0 0,
 100% 0,
-50% 35%
+50% 58%
 );
+
+transform-origin:top;
+
+transition:1.2s;
+
+z-index:5;
+}
 
 transform-origin:top;
 
@@ -136,37 +154,35 @@ font-size:20px;
 position:absolute;
 
 left:50%;
-top:34px;
+top:92px;
 
 transform:translateX(-50%);
 
-width:72px;
-height:72px;
+width:74px;
+height:74px;
 
 border-radius:50%;
 
 background:
 radial-gradient(
 circle at 30% 30%,
-#c73a4d,
+#d13c51,
 #8b1e2d
 );
-
-border:3px solid #a32637;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-weight:bold;
 font-size:22px;
+font-weight:bold;
 
-color:#f8e9e9;
+color:#fff2f2;
 
 box-shadow:
 0 10px 20px rgba(0,0,0,.25);
 
-z-index:20;
+z-index:10;
 }
 
 .open-text{
@@ -332,6 +348,22 @@ opacity:0;
 
 }
 
+@keyframes floatEnvelope{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
 @keyframes letterRise{
 
 0%{
@@ -393,18 +425,13 @@ transform:translateY(0);
 <div class="invite-container"
 onclick="apriInvito()">
 
-<div class="envelope">
-
 <div class="envelope-back"></div>
 
 <div class="envelope-flap"></div>
 
-<div class="invitation">
-
-<div class="invite-label">
-INVITO
+<div class="wax-seal">
+S&M
 </div>
-
 
 <div class="wax-seal">
 S&M
@@ -638,6 +665,7 @@ const envelope =
 document.querySelector('.envelope');
 
 envelope.classList.add('open');
+document.querySelector('.wax-seal').style.opacity="0";
 
 setTimeout(function(){
 
