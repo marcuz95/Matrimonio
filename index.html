@@ -87,6 +87,30 @@ body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
   line-height: 1;
 }
 
+  
+.rsvp-title {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px !important;
+}
+
+.rsvp-ornament {
+  color: #c5a878;
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.rsvp-date {
+  margin-top: 12px;
+  color: #c5a878;
+  font-family: Georgia, serif;
+  font-size: 22px !important;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
 img.story-photo {
   border-radius: 18px;
   box-shadow: 0 10px 28px rgba(120, 90, 60, 0.13);
@@ -235,13 +259,19 @@ img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;marg
     </div>
   </section>
 
-  <section class="section">
-    <div class="card">
-      <h2>📝 Conferma Presenza</h2>
-      <p>Vi chiediamo gentilmente di confermare la vostra presenza entro il 30 Giugno 2027.</p><br>
-      <a class="map-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Conferma la tua presenza ❤️</a>
-    </div>
-  </section>
+  
+<section class="section">
+  <div class="card">
+    <h2 class="rsvp-title">Conferma Presenza</h2>
+    <div class="rsvp-ornament" aria-hidden="true">✧</div>
+
+    <p>Vi chiediamo gentilmente di confermare la vostra presenza entro</p>
+    <p class="rsvp-date">30 giugno 2027</p>
+
+    <a class="map-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Conferma la tua presenza</a>
+  </div>
+</section>
+
 
   <section class="section">
     <div class="card">
