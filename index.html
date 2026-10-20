@@ -1,652 +1,163 @@
-lo<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Stefania & Marco</title>
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Georgia,serif;
-background:#fffaf5;
-color:#444;
-overflow-x:hidden;
-}
-
-.hidden{
-display:none;
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-background:
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.35)
-),
-
-url('IMG_9983.jpeg');
-
-background-size:cover;
-background-position:center;
-
-padding:20px;
-color:white;
-}
-
-.hero-content{
-max-width:800px;
-animation:fadeUp 1.5s ease;
-}
-
-.invite-container{
-cursor:pointer;
-}
-
-.wax-seal{
-position:absolute;
-
-left:50%;
-top:88px;
-
-transform:translateX(-50%);
-
-width:74px;
-height:74px;
-
-border-radius:50%;
-
-background:
-radial-gradient(
-circle at 30% 30%,
-#d13c51,
-#8b1e2d
-);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:22px;
-font-weight:bold;
-
-color:#fff2f2;
-
-box-shadow:
-0 10px 20px rgba(0,0,0,.25);
-
-z-index:10;
-}
-
-.open-text{
-margin-top:30px;
-font-size:15px;
-letter-spacing:2px;
-
-color:rgba(255,255,255,.75);
-
-background:linear-gradient(
-90deg,
-rgba(255,255,255,.4) 0%,
-rgba(255,255,255,1) 50%,
-rgba(255,255,255,.4) 100%
-);
-
-background-size:200% auto;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:shimmerText 4s infinite;
-}
-.envelope.open .wax-seal{
-animation:sealDrop .8s forwards;
-}
-
-.envelope.open .envelope-flap{
-transform:rotateX(180deg);
-transition-delay:.7s;
-}
-
-.envelope.open .invitation{
-animation:letterRise 1.2s forwards;
-animation-delay:1s;
-}
-
-.section{
-padding:40px 25px;
-text-align:center;
-
-opacity:0;
-transform:translateY(40px);
-
-transition:1s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.wedding-envelope{
-width:280px;
-max-width:80vw;
-
-display:block;
-margin:auto;
-
-cursor:pointer;
-
-transition:.4s;
-transition: all .6s ease;
-filter:drop-shadow(
-0 15px 30px rgba(0,0,0,.25)
-);
-}
-
-.wedding-envelope:hover{
-transform:scale(1.03);
-}
-
-.card{
-background:white;
-
-max-width:900px;
-
-margin:auto;
-
-padding:25px;
-
-border-radius:20px;
-
-box-shadow:
-0 8px 25px
-rgba(0,0,0,.08);
-}
-
-.countdown{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-.box{
-background:#fffaf5;
-padding:15px;
-border-radius:16px;
-min-width:90px;
-}
-
-.number{
-font-size:28px;
-font-weight:bold;
-color:#d97f62;
-}
-
-.section h2{
-font-size:36px;
-color:#d97f62;
-margin-bottom:25px;
-}
-
-.section p{
-font-size:18px;
-line-height:1.8;
-}
-
-.timeline{
-font-size:20px;
-line-height:2.2;
-}
-
-.map-btn{
-display:inline-block;
-
-margin-top:25px;
-
-padding:15px 30px;
-
-background:#d97f62;
-color:white;
-
-text-decoration:none;
-
-border-radius:50px;
-
-transition:.3s;
-}
-
-.map-btn:hover{
-transform:translateY(-3px);
-}
-
-footer{
-background:#fff1e8;
-padding:70px 20px;
-text-align:center;
-}
-
-footer h2{
-color:#d97f62;
-margin-bottom:15px;
-}
-
-.wave{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:120px;
-
-background:
-linear-gradient(
-to top,
-#fffaf5,
-transparent
-);
-}
-
-img.location-photo,
-img.story-photo{
-width:100%;
-max-width:700px;
-display:block;
-margin:25px auto;
-
-border-radius:25px;
-
-box-shadow:
-0 10px 30px
-rgba(0,0,0,.15);
-}
-
-@keyframes shimmerText{
-
-0%{
-background-position:-200% center;
-transform:scale(1);
-}
-
-45%{
-transform:scale(1);
-}
-
-50%{
-background-position:0% center;
-transform:scale(1.08);
-}
-
-55%{
-transform:scale(1);
-}
-
-100%{
-background-position:200% center;
-transform:scale(1);
-}
-
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
+.hidden{display:none}
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.35)),url('IMG_9983.jpeg');background-size:cover;background-position:center;padding:20px;color:white;position:relative}
+.hero-content{max-width:800px;animation:fadeUp 1.5s ease}
+.invite-container{cursor:pointer}
+.open-text{margin-top:30px;font-size:15px;letter-spacing:2px;color:rgba(255,255,255,.75);background:linear-gradient(90deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.4) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 4s infinite}
+.section{padding:40px 25px;text-align:center;opacity:0;transform:translateY(40px);transition:1s}
+.section.show{opacity:1;transform:translateY(0)}
+.wedding-envelope{width:280px;max-width:80vw;display:block;margin:auto;cursor:pointer;transition:all .6s ease;filter:drop-shadow(0 15px 30px rgba(0,0,0,.25))}
+.wedding-envelope:hover{transform:scale(1.03)}
+.card{background:white;max-width:900px;margin:auto;padding:25px;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:30px}
+.box{background:#fffaf5;padding:15px;border-radius:16px;min-width:90px}
+.number{font-size:28px;font-weight:bold;color:#d97f62}
+.section h2{font-size:36px;color:#d97f62;margin-bottom:25px}
+.section p{font-size:18px;line-height:1.8}
+.map-btn{display:inline-block;margin-top:25px;padding:15px 30px;background:#d97f62;color:white;text-decoration:none;border-radius:50px;transition:.3s}
+.map-btn:hover{transform:translateY(-3px)}
+footer{background:#fff1e8;padding:70px 20px;text-align:center}
+footer h2{color:#d97f62;margin-bottom:15px}
+.wave{position:absolute;bottom:0;left:0;width:100%;height:120px;background:linear-gradient(to top,#fffaf5,transparent);pointer-events:none}
+img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;margin:25px auto;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+/* Programma coordinato con il sito: corallo nei titoli, oro champagne nei dettagli */
+.program-card{background:#fff;border:1px solid #f5e9df;padding:clamp(28px,5vw,52px) clamp(18px,5vw,45px);overflow:hidden}
+.program-heading{font-size:36px!important;line-height:1.2;color:#d97f62!important;font-weight:bold;letter-spacing:0;margin-bottom:4px!important}
+.program-subtitle{font-size:22px!important;line-height:1.35;color:#d97f62!important;font-style:italic;margin-bottom:8px!important}
+.program-date{font-size:13px!important;letter-spacing:3px;text-transform:uppercase;color:#77716a;margin:18px 0 36px!important}
+.program-timeline{position:relative;max-width:500px;margin:0 auto;text-align:left;padding:0 0 0 42px}
+.program-timeline:before{content:"";position:absolute;left:12px;top:8px;bottom:16px;width:1px;background:#c5a878}
+.program-item{position:relative;padding:0 0 30px;min-height:64px}
+.program-item:last-child{padding-bottom:0}
+.program-item:before{content:"";position:absolute;left:-35px;top:8px;width:9px;height:9px;border-radius:50%;background:#c5a878;box-shadow:0 0 0 4px #fff}
+.program-item:after{content:"";position:absolute;left:-42px;bottom:13px;width:84px;height:1px;background:#e2d3bb}
+.program-item:last-child:after{display:none}
+.program-item h3{font-size:clamp(16px,3vw,21px);font-weight:normal;letter-spacing:1.8px;text-transform:uppercase;color:#48413b;line-height:1.5}
+.program-time{display:block;margin-top:4px;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:#b18b55}
+.program-flourish{text-align:center;color:#c5a878;font-size:25px;margin-top:26px;line-height:1}
+@keyframes shimmerText{0%{background-position:-200% center;transform:scale(1)}45%{transform:scale(1)}50%{background-position:0% center;transform:scale(1.08)}55%{transform:scale(1)}100%{background-position:200% center;transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){.section{padding:28px 14px}.card{padding:22px 16px}.section h2{font-size:29px}.program-heading{font-size:30px!important}.program-timeline{padding-left:38px}.program-item:before{left:-31px}.program-item:after{left:-38px;width:76px}.program-timeline:before{left:7px}}
 </style>
-
 </head>
-
 <body>
-
 <section class="hero">
-
-<div class="hero-content">
-
-<div class="invite-container" onclick="apriInvito()">
-
-<img
-src="4768B8D8-CABF-4D60-8827-DEABD54949ED.jpeg"
-
-class="wedding-envelope"
-alt="Invito matrimonio">
-
-<p class="open-text">
-Tocca il sigillo per aprire l'invito
-</p>
-
-</div>
-</div>
-
-<div class="wave"></div>
-
+  <div class="hero-content">
+    <div class="invite-container" onclick="apriInvito()">
+      <img src="4768B8D8-CABF-4D60-8827-DEABD54949ED.jpeg" class="wedding-envelope" alt="Invito matrimonio">
+      <p class="open-text">Tocca il sigillo per aprire l'invito</p>
+    </div>
+  </div>
+  <div class="wave"></div>
 </section>
 
 <div id="contenuto" class="hidden">
-
-<section class="section">
-
-<div class="card">
-
-<h2>💍 Il Nostro Giorno Speciale</h2>
-
-<p>
-
-Con immensa gioia vi invitiamo a condividere con noi
-uno dei giorni più importanti della nostra vita.
-
-</p>
-
-<div class="countdown">
-
-<div class="box">
-<div id="giorni" class="number">0</div>
-Giorni
-</div>
-
-<div class="box">
-<div id="ore" class="number">0</div>
-Ore
-</div>
-
-<div class="box">
-<div id="minuti" class="number">0</div>
-Minuti
-</div>
-
-<div class="box">
-<div id="secondi" class="number">0</div>
-Secondi
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2>📍 Location</h2>
-
-<p>
-
-<strong>Parco sul Mare</strong>
-
-<br>
-
-Cupra Marittima (AP)
-
-</p>
-
-<img
-src="IMG_9983.jpeg"
-alt="Parco sul Mare"
-class="location-photo">
-
-<p>
-
-🌊 Cerimonia e ricevimento vista mare
-
-</p>
-
-<a
-class="map-btn"
-href="https://maps.app.goo.gl/RGMYA7x1VWKph5yn6?g_st=ic"
-target="_blank">
-
-Apri Google Maps
-
-</a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2>🌊 Programma della Giornata</h2>
-
-<div class="timeline">
-
-💒 Cerimonia<br><br>
-
-🥂 Aperitivo<br><br>
-
-🍽️ Pranzo<br><br>
-
-🎂 Taglio della Torta<br><br>
-
-🎉 Festa
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2>❤️ La Nostra Storia</h2>
-
-<img
-src="IMG_3647.jpeg"
-alt="Stefania e Marco"
-class="story-photo">
-
-<p>
-
-Ci siamo incontrati,
-ci siamo scelti
-e da quel momento
-abbiamo iniziato
-a costruire il nostro futuro insieme.
-
-<br><br>
-
-Oggi siamo felici di condividere con voi
-il giorno più importante della nostra storia.
-
-</p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2>📝 Conferma Presenza</h2>
-
-<p>
-
-Vi chiediamo gentilmente di confermare
-la vostra presenza entro il 30 Giugno 2027.
-
-</p>
-
-<br>
-
-<a
-class="map-btn"
-href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor"
-target="_blank">
-
-Conferma la tua presenza ❤️
-
-</a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card">
-
-<h2>💌 Un Messaggio per Voi</h2>
-
-<p>
-
-Grazie per aver fatto parte della nostra storia.
-
-<br><br>
-
-La vostra presenza renderà questo giorno ancora più speciale.
-
-<br><br>
-
-Non vediamo l'ora di festeggiare insieme a voi.
-
-❤️
-
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-<h2>Stefania & Marco</h2>
-
-<p>
-
-Grazie per far parte della nostra storia.
-
-</p>
-
-</footer>
-
+  <section class="section">
+    <div class="card">
+      <h2>💍 Il Nostro Giorno Speciale</h2>
+      <p>Con immensa gioia vi invitiamo a condividere con noi uno dei giorni più importanti della nostra vita.</p>
+      <div class="countdown">
+        <div class="box"><div id="giorni" class="number">0</div>Giorni</div>
+        <div class="box"><div id="ore" class="number">0</div>Ore</div>
+        <div class="box"><div id="minuti" class="number">0</div>Minuti</div>
+        <div class="box"><div id="secondi" class="number">0</div>Secondi</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>📍 Location</h2>
+      <p><strong>Parco sul Mare</strong><br>Cupra Marittima (AP)</p>
+      <img src="IMG_9983.jpeg" alt="Parco sul Mare" class="location-photo">
+      <p>🌊 Cerimonia e ricevimento vista mare</p>
+      <a class="map-btn" href="https://maps.app.goo.gl/RGMYA7x1VWKph5yn6?g_st=ic" target="_blank" rel="noopener noreferrer">Apri Google Maps</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card program-card">
+      <h2 class="program-heading">Il programma</h2>
+      <p class="program-subtitle">della giornata</p>
+      <div class="program-date">27 agosto 2027</div>
+      <div class="program-timeline">
+        <div class="program-item"><h3>Cerimonia</h3><span class="program-time">Ore 17:30</span></div>
+        <div class="program-item"><h3>Aperitivo</h3></div>
+        <div class="program-item"><h3>Cena</h3></div>
+        <div class="program-item"><h3>Taglio della torta</h3></div>
+        <div class="program-item"><h3>Festa &amp; Open Bar</h3></div>
+      </div>
+      <div class="program-flourish" aria-hidden="true">～</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>❤️ La Nostra Storia</h2>
+      <img src="IMG_3647.jpeg" alt="Stefania e Marco" class="story-photo">
+      <p>Ci siamo incontrati, ci siamo scelti e da quel momento abbiamo iniziato a costruire il nostro futuro insieme.<br><br>Oggi siamo felici di condividere con voi il giorno più importante della nostra storia.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>📝 Conferma Presenza</h2>
+      <p>Vi chiediamo gentilmente di confermare la vostra presenza entro il 30 Giugno 2027.</p><br>
+      <a class="map-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScuMiw8o6q16GkxC-lMd6_HLqSK-zKzh5NoCtsPb0hiLFJbDw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Conferma la tua presenza ❤️</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>💌 Un Messaggio per Voi</h2>
+      <p>Grazie per aver fatto parte della nostra storia.<br><br>La vostra presenza renderà questo giorno ancora più speciale.<br><br>Non vediamo l'ora di festeggiare insieme a voi.<br><br>❤️</p>
+    </div>
+  </section>
+
+  <footer><h2>Stefania &amp; Marco</h2><p>Grazie per far parte della nostra storia.</p></footer>
 </div>
 
 <script>
-
 function apriInvito(){
-
-const busta =
-document.querySelector('.wedding-envelope');
-
-busta.style.animation = "none";
-busta.style.transform = "translateY(-30px) scale(.9)";
-busta.style.opacity = "0";
-
-setTimeout(function(){
-
-const hero =
-document.querySelector('.hero');
-
-hero.style.transition = "1s";
-hero.style.opacity = "0";
-
-setTimeout(function(){
-
-hero.style.display = "none";
-
-const contenuto =
-document.getElementById("contenuto");
-
-contenuto.classList.remove("hidden");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-},1000);
-
-},800);
-
+  const busta=document.querySelector('.wedding-envelope');
+  busta.style.animation="none";
+  busta.style.transform="translateY(-30px) scale(.9)";
+  busta.style.opacity="0";
+  setTimeout(function(){
+    const hero=document.querySelector('.hero');
+    hero.style.transition="1s";
+    hero.style.opacity="0";
+    setTimeout(function(){
+      hero.style.display="none";
+      document.getElementById("contenuto").classList.remove("hidden");
+      window.scrollTo({top:0,behavior:"smooth"});
+    },1000);
+  },800);
 }
-
-const matrimonio =
-new Date("2027-08-27T16:00:00").getTime();
-
+const matrimonio=new Date("2027-08-27T16:00:00").getTime();
 setInterval(function(){
-
-const now =
-new Date().getTime();
-
-const diff =
-matrimonio - now;
-
-if(diff <= 0) return;
-
-document.getElementById("giorni").innerHTML =
-Math.floor(diff/(1000*60*60*24));
-
-document.getElementById("ore").innerHTML =
-Math.floor(
-(diff%(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-document.getElementById("minuti").innerHTML =
-Math.floor(
-(diff%(1000*60*60))
-/
-(1000*60)
-);
-
-document.getElementById("secondi").innerHTML =
-Math.floor(
-(diff%(1000*60))
-/
-1000
-);
-
+  const diff=matrimonio-new Date().getTime();
+  if(diff<=0)return;
+  document.getElementById("giorni").innerHTML=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("ore").innerHTML=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("minuti").innerHTML=Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById("secondi").innerHTML=Math.floor((diff%(1000*60))/1000);
 },1000);
-
-const sections =
-document.querySelectorAll('.section');
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add('show');
-
-}
-
-});
-
-},{
-threshold:0.15
-});
-
-sections.forEach(section=>{
-
-observer.observe(section);
-
-});
-
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show');});
+},{threshold:0.15});
+sections.forEach(section=>observer.observe(section));
 </script>
-
 </body>
-
 </html>
