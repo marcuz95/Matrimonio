@@ -193,6 +193,29 @@ img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;marg
 @keyframes shimmerText{0%{background-position:-200% center;transform:scale(1)}45%{transform:scale(1)}50%{background-position:0% center;transform:scale(1.08)}55%{transform:scale(1)}100%{background-position:200% center;transform:scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:480px){.section{padding:28px 14px}.card{padding:22px 16px}.section h2{font-size:29px}.program-heading{font-size:30px!important}.program-timeline{padding-left:38px}.program-item:before{left:-31px}.program-item:after{left:-38px;width:76px}.program-timeline:before{left:7px}}
+
+.message-title {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px !important;
+}
+
+.message-ornament {
+  color: #c5a878;
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.message-text {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #62564d;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
 </style>
 </head>
 <body>
@@ -273,12 +296,20 @@ img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;marg
 </section>
 
 
-  <section class="section">
-    <div class="card">
-      <h2>💌 Un Messaggio per Voi</h2>
-      <p>Grazie per aver fatto parte della nostra storia.<br><br>La vostra presenza renderà questo giorno ancora più speciale.<br><br>Non vediamo l'ora di festeggiare insieme a voi.<br><br>❤️</p>
-    </div>
-  </section>
+
+<section class="section">
+  <div class="card">
+    <h2 class="message-title">Un Messaggio per Voi</h2>
+    <div class="message-ornament" aria-hidden="true">✧</div>
+
+    <p class="message-text">
+      Grazie per aver fatto parte della nostra storia.
+      La vostra presenza renderà questo giorno ancora più speciale.
+      Non vediamo l'ora di festeggiare insieme a voi.
+    </p>
+  </div>
+</section>
+
 
   <footer><h2>Stefania &amp; Marco</h2><p>Grazie per far parte della nostra storia.</p></footer>
 </div>
