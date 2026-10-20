@@ -4,46 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stefania & Marco</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
-.hidden{display:none}
-.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.35)),url('IMG_9983.jpeg');background-size:cover;background-position:center;padding:20px;color:white;position:relative}
-.hero-content{max-width:800px;animation:fadeUp 1.5s ease}
-.invite-container{cursor:pointer}
-.open-text{margin-top:30px;font-size:15px;letter-spacing:2px;color:rgba(255,255,255,.75);background:linear-gradient(90deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.4) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 4s infinite}
-.section{padding:40px 25px;text-align:center;opacity:0;transform:translateY(40px);transition:1s}
-.section.show{opacity:1;transform:translateY(0)}
-.wedding-envelope{width:280px;max-width:80vw;display:block;margin:auto;cursor:pointer;transition:all .6s ease;filter:drop-shadow(0 15px 30px rgba(0,0,0,.25))}
-.wedding-envelope:hover{transform:scale(1.03)}
-.card{background:white;max-width:900px;margin:auto;padding:25px;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-.countdown{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-  max-width:520px;
-  margin-left:auto;
-  margin-right:auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.box{background:#fffaf5;padding:15px;border-radius:16px;min-width:90px}
-/* Countdown elegante */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #fffaf5;
+  color: #444;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HERO E INVITO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.35)),
+    url('IMG_9983.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeUp 1.5s ease;
+}
+
+.invite-container {
+  cursor: pointer;
+}
+
+.open-text {
+  margin-top: 30px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.75);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.4) 0%,
+    rgba(255,255,255,1) 50%,
+    rgba(255,255,255,.4) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 4s infinite;
+}
+
+.wedding-envelope {
+  width: 280px;
+  max-width: 80vw;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  transition: all .6s ease;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,.25));
+}
+
+.wedding-envelope:hover {
+  transform: scale(1.03);
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, #fffaf5, transparent);
+  pointer-events: none;
+}
+
+/* SEZIONI GENERALI */
+.section {
+  padding: 40px 25px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #d97f62;
+  margin-bottom: 25px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  background: #fffaf5;
+  padding: 15px;
+  border-radius: 16px;
+  min-width: 90px;
+}
+
 .countdown .box {
-  background: #ffffff;
+  background: #fff;
   padding: 18px 14px;
   border: 1px solid #eadcc8;
   border-radius: 16px;
   min-width: 90px;
-  box-shadow: 0 5px 18px rgba(120, 90, 60, 0.07);
+  box-shadow: 0 5px 18px rgba(120,90,60,.07);
   color: #8c7965;
   font-family: Georgia, serif;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
-.countdown .number {
+.number {
   font-size: 30px;
   font-weight: normal;
   color: #c5a878;
@@ -51,14 +168,24 @@ body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
   font-variant-numeric: tabular-nums;
 }
 
-.number{
-  font-size:30px;
-  font-weight:normal;
-  color:#c5a878;
-  margin-bottom:6px;
-  font-variant-numeric:tabular-nums;
+/* GIORNO SPECIALE */
+.special-title {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  letter-spacing: .5px;
+  line-height: 1.3;
 }
-.section h2{font-size:36px;color:#d97f62;margin-bottom:25px}
+
+.romantic-phrase {
+  margin-top: 18px;
+  color: #8c7965;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+/* LOCATION */
 .location-title {
   font-family: Georgia, serif;
   font-weight: normal;
@@ -72,11 +199,183 @@ body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
   margin-bottom: 20px;
   line-height: 1;
 }
-  
+
+.location-title + .location-ornament + p strong {
+  color: #8c7965;
+  font-weight: normal;
+  letter-spacing: .5px;
+}
+
+img.location-photo,
+img.story-photo {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 25px auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 32px;
+  background: #d97f62;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #d97f62;
+  border-radius: 50px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  letter-spacing: .4px;
+  transition: all .3s ease;
+  box-shadow: 0 5px 15px rgba(217,127,98,.15);
+}
+
+.map-btn:hover {
+  background: #c5a878;
+  border-color: #c5a878;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(120,90,60,.15);
+}
+
+/* PROGRAMMA DEL MATRIMONIO */
+.program-card {
+  background: #fff;
+  border: 1px solid #f5e9df;
+  padding: clamp(28px,5vw,52px) clamp(18px,5vw,45px);
+  overflow: hidden;
+}
+
+/* Piccola intestazione */
+.program-label {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #8c7965;
+  margin: 0 0 10px;
+}
+
+/* Data in evidenza */
+.program-date {
+  font-size: 32px !important;
+  line-height: 1.3;
+  letter-spacing: .5px;
+  text-transform: none;
+  color: #c5a878;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  margin: 0 0 5px !important;
+}
+
+/* Titolo del programma */
+.program-heading {
+  font-size: 27px !important;
+  line-height: 1.3;
+  color: #d97f62 !important;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  letter-spacing: .3px;
+  margin: 0 0 30px !important;
+}
+
+/* Timeline centrata nella scheda */
+.program-timeline {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 0 0 42px;
+}
+
+/* Linea verticale champagne */
+.program-timeline:before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  bottom: 16px;
+  width: 1px;
+  background: #c5a878;
+}
+
+/* Singoli eventi */
+.program-item {
+  position: relative;
+  padding: 0 0 30px;
+  min-height: 64px;
+  text-align: left;
+}
+
+.program-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Pallini della timeline */
+.program-item:before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c5a878;
+  box-shadow: 0 0 0 4px #fff;
+}
+
+/* Piccoli segmenti orizzontali */
+.program-item:after {
+  content: "";
+  position: absolute;
+  left: -42px;
+  bottom: 13px;
+  width: 84px;
+  height: 1px;
+  background: #e2d3bb;
+}
+
+.program-item:last-child:after {
+  display: none;
+}
+
+/* Nomi degli eventi */
+.program-item h3 {
+  font-size: clamp(16px,3vw,21px);
+  font-weight: normal;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #48413b;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Orari */
+.program-time {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #b18b55;
+}
+
+.program-flourish {
+  text-align: center;
+  color: #c5a878;
+  font-size: 25px;
+  margin-top: 26px;
+  line-height: 1;
+}
+
+/* LA NOSTRA STORIA */
 .story-title {
   font-family: Georgia, serif;
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   margin-bottom: 4px !important;
 }
 
@@ -87,11 +386,25 @@ body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
   line-height: 1;
 }
 
-  
+img.story-photo {
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(120,90,60,.13);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.story-title + .story-ornament + img.story-photo + p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #62564d;
+  line-height: 1.9;
+}
+
+/* CONFERMA PRESENZA */
 .rsvp-title {
   font-family: Georgia, serif;
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   margin-bottom: 4px !important;
 }
 
@@ -108,185 +421,14 @@ body{font-family:Georgia,serif;background:#fffaf5;color:#444;overflow-x:hidden}
   font-family: Georgia, serif;
   font-size: 22px !important;
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
-img.story-photo {
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(120, 90, 60, 0.13);
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.story-title + .story-ornament + img.story-photo + p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #62564d;
-  line-height: 1.9;
-}
-.location-title + .location-ornament + p strong {
-  color: #8c7965;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-}
-
-  
-.special-title {
-  font-family: Georgia, serif;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
-}
-
-.romantic-phrase {
-  margin-top: 18px;
-  color: #8c7965;
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-}
-
-.section p{font-size:18px;line-height:1.8}
-
-.map-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 15px 32px;
-  background: #d97f62;
-  color: white;
-  text-decoration: none;
-  border: 1px solid #d97f62;
-  border-radius: 50px;
-  font-family: Georgia, serif;
-  font-size: 15px;
-  letter-spacing: 0.4px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(217, 127, 98, 0.15);
-}
-
-.map-btn:hover {
-  background: #c5a878;
-  border-color: #c5a878;
-  transform: translateY(-2px);
-  box-shadow: 0 7px 18px rgba(120, 90, 60, 0.15);
-}
-
-.wave{position:absolute;bottom:0;left:0;width:100%;height:120px;background:linear-gradient(to top,#fffaf5,transparent);pointer-events:none}
-img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;margin:25px auto;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
-
-/* Programma coordinato con il sito: corallo nei titoli, oro champagne nei dettagli */
-.program-card{background:#fff;border:1px solid #f5e9df;padding:clamp(28px,5vw,52px) clamp(18px,5vw,45px);overflow:hidden}
-
-.program-heading {
-  font-size: 30px !important;
-  line-height: 1.3;
-  color: #d97f62 !important;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  margin: 0 0 30px !important;
-}
-
-
-.program-date {
-  font-size: 25px !important;
-  line-height: 1.4;
-  letter-spacing: 1px;
-  text-transform: none;
-  color: #c5a878;
-  font-family: Georgia, serif;
-  font-weight: normal;
-  margin: 0 0 0 !important;
-}
-
-}
-
-
-
-.program-timeline {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 24px auto 0;
-  text-align: left;
-  padding: 0 0 0 42px;
-}
-
-.program-timeline:before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 8px;
-  bottom: 16px;
-  width: 1px;
-  background: #c5a878;
-}
-
-.program-item {
-  position: relative;
-  padding: 0 0 30px;
-  min-height: 64px;
-  text-align: left;
-}
-
-.program-item:last-child {
-  padding-bottom: 0;
-}
-
-.program-item:before {
-  content: "";
-  position: absolute;
-  left: -35px;
-  top: 8px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #c5a878;
-  box-shadow: 0 0 0 4px #fff;
-}
-
-.program-item:after {
-  content: "";
-  position: absolute;
-  left: -42px;
-  bottom: 13px;
-  width: 84px;
-  height: 1px;
-  background: #e2d3bb;
-}
-
-.program-item:last-child:after {
-  display: none;
-}
-
-.program-item h3 {
-  font-size: clamp(16px, 3vw, 21px);
-  font-weight: normal;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: #48413b;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.program-time {
-  display: block;
-  margin-top: 4px;
-  font-size: 13px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #b18b55;
-}
-
-.program-flourish{text-align:center;color:#c5a878;font-size:25px;margin-top:26px;line-height:1}
-@keyframes shimmerText{0%{background-position:-200% center;transform:scale(1)}45%{transform:scale(1)}50%{background-position:0% center;transform:scale(1.08)}55%{transform:scale(1)}100%{background-position:200% center;transform:scale(1)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.section{padding:28px 14px}.card{padding:22px 16px}.section h2{font-size:29px}.program-heading{font-size:25px!important}.program-timeline{padding-left:38px}.program-item:before{left:-31px}.program-item:after{left:-38px;width:76px}.program-timeline:before{left:7px}}
-
+/* MESSAGGIO FINALE */
 .message-title {
   font-family: Georgia, serif;
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   margin-bottom: 4px !important;
 }
 
@@ -302,10 +444,10 @@ img.location-photo,img.story-photo{width:100%;max-width:700px;display:block;marg
   margin: 0 auto;
   color: #62564d;
   line-height: 1.9;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
-  
+/* FIRMA FINALE */
 footer {
   text-align: center;
   padding: 45px 20px 35px;
@@ -330,7 +472,107 @@ footer p {
   color: #8c7965;
 }
 
-  
+/* ANIMAZIONI */
+@keyframes shimmerText {
+  0% {
+    background-position: -200% center;
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1);
+  }
+  50% {
+    background-position: 0% center;
+    transform: scale(1.08);
+  }
+  55% {
+    transform: scale(1);
+  }
+  100% {
+    background-position: 200% center;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ADATTAMENTO AGLI SMARTPHONE */
+@media (max-width: 480px) {
+  .section {
+    padding: 28px 14px;
+  }
+
+  .card {
+    padding: 22px 16px;
+  }
+
+  .section h2 {
+    font-size: 29px;
+  }
+
+  .program-card {
+    padding: 28px 18px;
+  }
+
+  .program-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .program-date {
+    font-size: 27px !important;
+  }
+
+  .program-heading {
+    font-size: 23px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .program-timeline {
+    max-width: 360px;
+    padding-left: 38px;
+  }
+
+  .program-item:before {
+    left: -31px;
+  }
+
+  .program-item:after {
+    left: -38px;
+    width: 76px;
+  }
+
+  .program-timeline:before {
+    left: 7px;
+  }
+
+  .program-item h3 {
+    font-size: 16px;
+    letter-spacing: 1.3px;
+  }
+
+  .program-time {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .message-text {
+    font-size: 15px !important;
+  }
+
+  footer h2 {
+    font-size: 25px;
+  }
+}
 </style>
 </head>
 <body>
@@ -374,8 +616,11 @@ footer p {
 
   <section class="section">
     <div class="card program-card">
-      <div class="program-date">27 agosto 2027</div>
-<h2 class="program-heading">Il programma della giornata</h2>
+     
+<p class="program-label">Matrimonio</p>
+<div class="program-date">27 agosto 2027</div>
+<h2 class="program-heading">Programma della giornata</h2>
+
       <div class="program-timeline">
         <div class="program-item"><h3>Cerimonia</h3><span class="program-time">Ore 17:30</span></div>
         <div class="program-item"><h3>Aperitivo</h3></div>
